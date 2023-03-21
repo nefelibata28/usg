@@ -12,3 +12,7 @@ passenger_vol_202301:
 passenger_vol_202212:
   type: polars.CSVDataSet
   filepath: data/01_raw/lta_passenger_vol_train_202212.csv
+
+kaggle_steam:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/kaggle_steam.csv

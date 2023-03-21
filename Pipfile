@@ -10,6 +10,7 @@ polars = "~=0.15.16"
 scikit-learn = "*"
 ipython = "~=8.10"
 pandas = "*"
+seaborn = "*"
 
 [dev-packages]
 kedro-docker = "*"
