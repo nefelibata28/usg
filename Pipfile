@@ -11,6 +11,8 @@ scikit-learn = "*"
 ipython = "~=8.10"
 pandas = "*"
 seaborn = "*"
+kmodes = "*"
+pyzmq = "==19.0.2"
 
 [dev-packages]
 kedro-docker = "*"
