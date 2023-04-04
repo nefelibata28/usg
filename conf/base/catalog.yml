@@ -4,6 +4,11 @@
 # Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
 
 # Obtained from LTA DataMall (Passenger Volume By Train API)
+passenger_vol_202302:
+  type: polars.CSVDataSet
+  filepath: data/01_raw/lta_passenger_vol_train_202302.csv
+
+# Obtained from LTA DataMall (Passenger Volume By Train API)
 passenger_vol_202301:
   type: polars.CSVDataSet
   filepath: data/01_raw/lta_passenger_vol_train_202301.csv
@@ -16,3 +21,19 @@ passenger_vol_202212:
 kaggle_steam:
   type: pandas.CSVDataSet
   filepath: data/01_raw/kaggle_steam.csv
+
+train:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/train.csv
+
+model@scaler:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/scaler.pickle
+
+model@kprototypes@8:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/kprototypes.pickle
+
+labels@kprototypes@8:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/labels.csv
