@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sb
 
-numerical = ['year', 'achievements', 'required_age', 'achievements', 'price', 'est_owners', # general information
+numerical = ['year', 'achievements', 'required_age', 'price', 'est_owners', # general information
             'num_categories', 'num_genres', 'num_steamspy_tags', # imputed information
             'positive_ratings', 'negative_ratings', 'ratings_ratio', # dependent information
             'average_playtime', 'median_playtime']

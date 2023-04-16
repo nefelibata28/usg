@@ -38,10 +38,26 @@ model@scaler:
   type: pickle.PickleDataSet
   filepath: data/06_models/scaler.pickle
 
+model@kprototypes@4:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/kprototypes.4.pickle
+
+labels@kprototypes@4:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/labels.kproto.4.csv
+
+model@kprototypes@6:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/kprototypes.6.pickle
+
+labels@kprototypes@6:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/labels.kproto.6.csv
+
 model@kprototypes@8:
   type: pickle.PickleDataSet
-  filepath: data/06_models/kprototypes.pickle
+  filepath: data/06_models/kprototypes.8.pickle
 
 labels@kprototypes@8:
   type: pandas.CSVDataSet
-  filepath: data/07_model_output/labels.csv
+  filepath: data/07_model_output/labels.kproto.8.csv
