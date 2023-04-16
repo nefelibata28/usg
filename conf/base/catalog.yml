@@ -22,6 +22,14 @@ kaggle_steam:
   type: pandas.CSVDataSet
   filepath: data/01_raw/kaggle_steam.csv
 
+features_eng_1:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/features.1.csv
+
+features_eng_2:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/features.2.csv
+
 train:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/train.csv

@@ -1,5 +1,53 @@
 import pandas as pd
 import numpy as np
+import seaborn as sb
+
+numerical = ['year', 'achievements', 'required_age', 'achievements', 'price', 'est_owners', # general information
+            'num_categories', 'num_genres', 'num_steamspy_tags', # imputed information
+            'positive_ratings', 'negative_ratings', 'ratings_ratio', # dependent information
+            'average_playtime', 'median_playtime']
+
+categorical = ['english', 'windows', 'mac', 'linux', 'Single-player', 'Multi-player', 'Indie', 'Action', 'Casual']
+
+columns = categorical + numerical
+
+def catplot_ylabel(g: sb.axisgrid.FacetGrid, fmt='{0:.0f}') -> sb.axisgrid.FacetGrid:
+    # extract the matplotlib axes_subplot objects from the FacetGrid
+    ax = g.axes.flat[0]
+
+    # iterate through the axes containers
+    for c in ax.containers:
+        labels = [fmt.format(v.get_width()) for v in c]
+        ax.bar_label(c, labels=labels, label_type='edge', padding=3)
+    
+    return g
+
+def catplot_xlabel(g: sb.axisgrid.FacetGrid, fmt='{0:.0f}') -> sb.axisgrid.FacetGrid:
+    # extract the matplotlib axes_subplot objects from the FacetGrid
+    ax = g.axes.flat[0]
+
+    # iterate through the axes containers
+    for c in ax.containers:
+        labels = [fmt.format(v.get_height()) for v in c]
+        ax.bar_label(c, labels=labels, label_type='edge', padding=3)
+    
+    return g
+
+def catplot_xpercent(data: pd.DataFrame, var: str, fmt='{0:.1%}') -> sb.axisgrid.FacetGrid:
+    d = data[var].value_counts() / len(data)
+    return catplot_xpercent_raw(d, var, fmt)
+
+def catplot_xpercent_raw(data: pd.Series, var: str, fmt='{0:.1%}') -> sb.axisgrid.FacetGrid:
+    g = sb.catplot(data=data.to_frame('percentage').reset_index(names=var), x=var, y='percentage', kind='bar')
+    return catplot_xlabel(g, fmt=fmt)
+
+def catplot_ypercent(data: pd.DataFrame, var: str, fmt='{0:.1%}') -> sb.axisgrid.FacetGrid:
+    d = data[var].value_counts() / len(data)
+    return catplot_ypercent_raw(d, var, fmt)
+
+def catplot_ypercent_raw(data: pd.Series, var: str, fmt='{0:.1%}') -> sb.axisgrid.FacetGrid:
+    g = sb.catplot(data=data.to_frame('percentage').reset_index(names=var), y=var, x='percentage', kind='bar')
+    return catplot_ylabel(g, fmt=fmt)
 
 def significant_digits(df: "Union[pd.DataFrame, pd.Series]", 
                        significance: int, 
