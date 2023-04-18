@@ -34,9 +34,17 @@ train:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/train.csv
 
-model@scaler:
+model@sscaler:
   type: pickle.PickleDataSet
-  filepath: data/06_models/scaler.pickle
+  filepath: data/06_models/sscaler.pickle
+
+model@pscaler:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/pscaler.pickle
+
+model@pca:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/pca.pickle
 
 model@kprototypes@4:
   type: pickle.PickleDataSet
@@ -46,14 +54,6 @@ labels@kprototypes@4:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/labels.kproto.4.csv
 
-model@kprototypes@6:
-  type: pickle.PickleDataSet
-  filepath: data/06_models/kprototypes.6.pickle
-
-labels@kprototypes@6:
-  type: pandas.CSVDataSet
-  filepath: data/07_model_output/labels.kproto.6.csv
-
 model@kprototypes@8:
   type: pickle.PickleDataSet
   filepath: data/06_models/kprototypes.8.pickle
@@ -61,3 +61,11 @@ model@kprototypes@8:
 labels@kprototypes@8:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/labels.kproto.8.csv
+
+model@kprototypes@11:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/kprototypes.11.pickle
+
+labels@kprototypes@11:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/labels.kproto.11.csv

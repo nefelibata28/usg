@@ -2,12 +2,13 @@ import pandas as pd
 import numpy as np
 import seaborn as sb
 
-numerical = ['year', 'achievements', 'required_age', 'price', 'est_owners', # general information
-            'num_categories', 'num_genres', 'num_steamspy_tags', # imputed information
+numerical = ['year', 'achievements', 'price', 'est_owners', # general information
+            'num_categories', 'num_genres',  # imputed information
             'positive_ratings', 'negative_ratings', 'ratings_ratio', # dependent information
-            'average_playtime', 'median_playtime']
+            'median_playtime']
 
-categorical = ['english', 'windows', 'mac', 'linux', 'Single-player', 'Multi-player', 'Indie', 'Action', 'Casual']
+categorical = ['mac', 'linux', 'Multi-player', 'Steam Achievements', 'Steam Trading Cards',
+               'Indie', 'Action', 'Casual', 'Strategy', 'Simulation', 'Free to Play', 'kid_friendly', 'mature']
 
 columns = categorical + numerical
 
