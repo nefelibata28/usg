@@ -2,121 +2,25 @@
 
 ## Overview
 
-This is your new Kedro project, which was generated using `Kedro 0.18.6`.
+This project uses unsupervised learning to infer identify hidden patterns in the kaggle_steam dataset.  
+ [Kaggle](https://www.kaggle.com/datasets/nikdavis/steam-store-games) | [Permalink](https://github.com/rxEckT/usg/blob/9d5377ae47314128a050e9b257ea01c5a4eb3575/data/01_raw/kaggle_steam.csv)
 
-Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started.
+Our clustering method of choice is [KPrototypes](https://github.com/nicodv/kmodes).
 
-## Rules and guidelines
+ All analyses were done in .ipynb in the [notebooks](/notebooks) subdirectory.
 
-In order to get the best out of the template:
+| |File|Description|
+|-|----|-----------|
+|1|[00_exploratory_data_analysis.ipynb](/notebooks/00_exploratory_data_analysis.ipynb)|We perform some preliminary investigations on our dataset to split them into categorical and numerical variables.|
+|2|[01_categorical_analysis.ipynb](/notebooks/01_categorical_analysis.ipynb)|We analyse categorical variables in detail and used MultiLabelBinarizer to select some features for use in clustering.|
+|3|[02_numerical_analysis.ipynb](/notebooks/02_numerical_analysis.ipynb)|We analyse numerical features in detail, explored PowerTransformer to scale our data and performed Principal Component Analysis to project our data.|
+|4|[10_feature_normalisation.ipynb](/notebooks/10_feature_normalisation.ipynb)|After some feature engineering, we used StandardScaler and PowerTransformer to normalise our data, followed up with PCA.|
+|5|[20_kprototypes.ipynb](/notebooks/20_kprototypes.ipynb)|We use elbow method and silhouette score to find the optimal number of clusters.|
+|6|[21_kprototypes(k=4).ipynb](/notebooks/21_kprototypes(k%3D4).ipynb)|We present our findings with k=4. We also used treemaps to visualise our findings.|
+|7|[22_kprototypes(k=24).ipynb](/notebooks/22_kprototypes(k%3D24).ipynb)|We compared our findings on k=24 to k=4.|
 
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://kedro.readthedocs.io/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+## How to reproduce
 
-## How to install dependencies
-
-Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
-
-To install them, run:
-
-```
-pip install -r src/requirements.txt
-```
-
-## How to run your Kedro pipeline
-
-You can run your Kedro project with:
-
-```
-kedro run
-```
-
-## How to test your Kedro project
-
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
-
-```
-kedro test
-```
-
-To configure the coverage threshold, go to the `.coveragerc` file.
-
-## Project dependencies
-
-To generate or update the dependency requirements for your project:
-
-```
-kedro build-reqs
-```
-
-This will `pip-compile` the contents of `src/requirements.txt` into a new file `src/requirements.lock`. You can see the output of the resolution by opening `src/requirements.lock`.
-
-After this, if you'd like to update your project requirements, please update `src/requirements.txt` and re-run `kedro build-reqs`.
-
-[Further information about project dependencies](https://kedro.readthedocs.io/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, `catalog`, and `startup_error`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r src/requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to convert notebook cells to nodes in a Kedro project
-You can move notebook code over into a Kedro project structure using a mixture of [cell tagging](https://jupyter-notebook.readthedocs.io/en/stable/changelog.html#release-5-0-0) and Kedro CLI commands.
-
-By adding the `node` tag to a cell and running the command below, the cell's source code will be copied over to a Python file within `src/<package_name>/nodes/`:
-
-```
-kedro jupyter convert <filepath_to_my_notebook>
-```
-> *Note:* The name of the Python file matches the name of the original notebook.
-
-Alternatively, you may want to transform all your notebooks in one go. Run the following command to convert all notebook files found in the project root directory and under any of its sub-folders:
-
-```
-kedro jupyter convert --all
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can run `kedro activate-nbstripout`. This will add a hook in `.git/config` which will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://kedro.readthedocs.io/en/stable/tutorial/package_a_project.html)
+1. Install dependencies listed in `Pipfile` within your python environment.
+2. Run all notebook .ipynb files in sequence.
+3. For `20_kprototypes.ipynb`, only running the last cell is necessary. The other cells make take hours to days to complete.
