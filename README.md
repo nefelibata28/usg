@@ -23,4 +23,4 @@ Our clustering method of choice is [KPrototypes](https://github.com/nicodv/kmode
 
 1. Install dependencies listed in `Pipfile` within your python environment.
 2. Run all notebook .ipynb files in sequence.
-3. For `20_kprototypes.ipynb`, only running the last cell is necessary. The other cells make take hours to days to complete.
+3. For `20_kprototypes.ipynb`, only running the last cell is necessary. The other cells may take hours to days to complete.
