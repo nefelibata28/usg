@@ -22,7 +22,6 @@ logs/**
 
 # also keep the example dataset
 !data/01_raw/iris.csv
-!data/01_raw/lta*
 !data/01_raw/kaggle*
 
 ##########################

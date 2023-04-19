@@ -54,18 +54,10 @@ labels@kprototypes@4:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/labels.kproto.4.csv
 
-model@kprototypes@8:
+model@kprototypes@24:
   type: pickle.PickleDataSet
-  filepath: data/06_models/kprototypes.8.pickle
+  filepath: data/06_models/kprototypes.24.pickle
 
-labels@kprototypes@8:
+labels@kprototypes@24:
   type: pandas.CSVDataSet
-  filepath: data/07_model_output/labels.kproto.8.csv
-
-model@kprototypes@11:
-  type: pickle.PickleDataSet
-  filepath: data/06_models/kprototypes.11.pickle
-
-labels@kprototypes@11:
-  type: pandas.CSVDataSet
-  filepath: data/07_model_output/labels.kproto.11.csv
+  filepath: data/07_model_output/labels.kproto.24.csv
