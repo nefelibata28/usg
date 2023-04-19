@@ -75,3 +75,13 @@ def significant_digits(df: "Union[pd.DataFrame, pd.Series]",
                                 columns=df.columns)
         else:
             return pd.Series(data=data_rounded, index=df.index)
+        
+def shorten(number):
+    if number >= 1_000_000:
+        return f'{number / 1_000_000:.0f}M'
+    elif number >= 1_000:
+        return f'{number / 1_000:.0f}K'
+    elif number == 0:
+        return '0'
+    else:
+        return f'{number / 1_000:.2f}K'
