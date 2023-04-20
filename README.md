@@ -17,7 +17,7 @@ Our clustering method of choice is [KPrototypes](https://github.com/nicodv/kmode
 |4|[10_feature_normalisation.ipynb](/notebooks/10_feature_normalisation.ipynb)|After some feature engineering, we used StandardScaler and PowerTransformer to normalise our data, followed up with PCA.|
 |5|[20_kprototypes.ipynb](/notebooks/20_kprototypes.ipynb)|We use elbow method and silhouette score to find the optimal number of clusters.|
 |6|[21_kprototypes(k=4).ipynb](/notebooks/21_kprototypes(k%3D4).ipynb)|We present our findings with k=4. We also used treemaps to visualise our findings.|
-|7|[22_kprototypes(k=24).ipynb](/notebooks/22_kprototypes(k%3D24).ipynb)|We compared our findings on k=24 to k=4.|
+|7|[22_kprototypes(k=24).ipynb](/notebooks/22_kprototypes(k%3D24).ipynb)|We compared our findings on k=24 to k=4. We also used a sankey diagram to visualise the relationships between k=4 and k=24.|
 
 ## How to reproduce
 
