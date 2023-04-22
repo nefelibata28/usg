@@ -52,7 +52,7 @@ Thanks to GitHub pages, we have made two of our interactive charts available for
 |Treemap of steam games by assigned clusters and number of owners|[21_kprototypes(k=4).ipynb](/notebooks/21_kprototypes(k%3D4).ipynb)|[Link](https://rxeckt.github.io/usg/images/21/1.html)|
 |Sankey diagram of k=4 distribution in k=24|[22_kprototypes(k=24).ipynb](/notebooks/22_kprototypes(k%3D24).ipynb)|[Link](https://rxeckt.github.io/usg/images/22/2.html)|
 
-Alternatively, a static image of these charts has also included in the respective notebooks.
+Alternatively, a static image of these charts has also been included in the respective notebooks.
 
 ---
 
@@ -65,6 +65,8 @@ Alternatively, a static image of these charts has also included in the respectiv
 - https://machinelearningmastery.com/power-transforms-with-scikit-learn/
 ### Principal Component Analysis
 - Data Analysis 6: Principal Component Analysis (PCA) - Computerphile https://www.youtube.com/watch?v=TJdH6rPA-TI
+### Projecting Data onto 3D
+- http://projector.tensorflow.org/
 ### Clustering
 - Data Analysis 7: Clustering - Computerphile
  https://www.youtube.com/watch?v=KtRLF6rAkyo
